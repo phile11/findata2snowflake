@@ -1,0 +1,22 @@
+[project]
+name = "findata2snowflake"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "“Patrick", email = "“patrick.hile@live.com”" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "boto3>=1.43.88",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+findata2snowflake = "findata2snowflake:main"
+
+[build-system]
+requires = ["uv_build>=0.12.4,<0.13.0"]
+build-backend = "uv_build"

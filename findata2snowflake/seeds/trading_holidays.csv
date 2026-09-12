@@ -1,0 +1,10 @@
+﻿holiday_date,holiday_name,is_trading_closed
+1/1/26,New Year's Day,TRUE
+1/19/26,Martin Luther King Jr. Day,TRUE
+2/16/26,Presidents' Day,TRUE
+4/3/26,Good Friday,TRUE
+5/25/26,Memorial Day,TRUE
+6/19/26,Juneteenth,TRUE
+7/3/26,Independence Day (Observed),TRUE
+11/26/26,Thanksgiving Day,TRUE
+12/25/26,Christmas Day,TRUE

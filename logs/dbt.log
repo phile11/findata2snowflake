@@ -1,0 +1,77 @@
+[0m14:35:00.896655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113576900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11598e710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11598e990>]}
+
+
+============================== 14:35:00.918277 | ed648689-bb90-427b-9718-6c9d5575e4cb ==============================
+[0m14:35:00.918277 [info ] [MainThread]: Running with dbt=1.12.4
+[0m14:35:00.918608 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'version_check': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'hints_enabled': 'True', 'log_path': 'logs', 'no_print': 'None', 'printer_width': '80', 'cache_selected_only': 'False', 'quiet': 'False', 'partial_parse': 'True', 'debug': 'False', 'invocation_command': 'dbt init findata2snowflake', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'log_cache_events': 'False', 'write_json': 'True', 'static_parser': 'True', 'log_format': 'default', 'profiles_dir': '/Users/phile/.dbt'}
+[0m14:35:00.958943 [debug] [MainThread]: Starter project path: /Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/include/starter_project
+[0m14:35:00.962561 [info ] [MainThread]: Setting up your profile.
+[0m14:35:09.727818 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m14:35:09.728279 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m14:35:09.728564 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m14:39:17.042473 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m14:39:17.051307 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/cli/main.py", line 504, in init
+    results = task.run()
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/task/init.py", line 363, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/task/init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/task/init.py", line 182, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/task/init.py", line 166, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/dbt/task/init.py", line 116, in generate_target_from_input
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/click/termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+  File "/Users/phile/Developer/experiment/findata2snowflake/.venv/lib/python3.14/site-packages/click/termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m14:39:17.052957 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 256.23883, "process_in_blocks": "0", "process_kernel_time": 0.518741, "process_mem_max_rss": "259162112", "process_out_blocks": "0", "process_user_time": 2.463144}
+[0m14:39:17.054625 [debug] [MainThread]: Command `dbt init` failed at 14:39:17.054495 after 256.24 seconds
+[0m14:39:17.055100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124f5e780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124f43530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1251b4d10>]}
+[0m14:39:17.055564 [debug] [MainThread]: Flushing usage events
+[0m14:39:17.270341 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:05:47.354699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106156120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b3e710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b3e990>]}
+
+
+============================== 17:05:47.357879 | aa33c364-bee8-4541-a5e1-c4925b696f43 ==============================
+[0m17:05:47.357879 [info ] [MainThread]: Running with dbt=1.12.4
+[0m17:05:47.358216 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'no_print': 'None', 'profiles_dir': '/Users/phile/.dbt', 'invocation_command': 'dbt run', 'use_colors': 'True', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'log_path': 'logs', 'quiet': 'False', 'static_parser': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'version_check': 'True', 'log_cache_events': 'False', 'empty': 'False', 'printer_width': '80', 'cache_selected_only': 'False', 'log_format': 'default'}
+[0m17:05:47.358617 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/phile/Developer/experiment/findata2snowflake/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:05:47.358966 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.05243125, "process_in_blocks": "0", "process_kernel_time": 0.099546, "process_mem_max_rss": "128827392", "process_out_blocks": "0", "process_user_time": 0.705503}
+[0m17:05:47.359261 [debug] [MainThread]: Command `dbt run` failed at 17:05:47.359213 after 0.05 seconds
+[0m17:05:47.359454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ab96e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b89370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b579b0>]}
+[0m17:05:47.359625 [debug] [MainThread]: Flushing usage events
+[0m17:05:47.997389 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:07:52.913349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f4e120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a732710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a732990>]}
+
+
+============================== 17:07:52.916500 | 2c5e5f1b-0057-4158-9d77-1adda4adb290 ==============================
+[0m17:07:52.916500 [info ] [MainThread]: Running with dbt=1.12.4
+[0m17:07:52.916842 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'maximum_seed_size_mib': '1', 'use_experimental_parser': 'False', 'static_parser': 'True', 'introspect': 'True', 'partial_parse': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'warn_error': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/phile/.dbt', 'log_path': 'logs', 'printer_width': '80', 'debug': 'False', 'hints_enabled': 'True', 'fail_fast': 'False', 'version_check': 'True', 'empty': 'False', 'quiet': 'False', 'use_colors': 'True', 'log_format': 'default'}
+[0m17:07:52.917257 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/phile/Developer/experiment/findata2snowflake/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:07:52.917597 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.052771833, "process_in_blocks": "0", "process_kernel_time": 0.090031, "process_mem_max_rss": "126844928", "process_out_blocks": "0", "process_user_time": 0.688112}
+[0m17:07:52.917892 [debug] [MainThread]: Command `dbt run` failed at 17:07:52.917843 after 0.05 seconds
+[0m17:07:52.918066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a6b16e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a781370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a74f9b0>]}
+[0m17:07:52.918222 [debug] [MainThread]: Flushing usage events
+[0m17:07:53.118837 [debug] [MainThread]: An error was encountered while trying to flush usage events

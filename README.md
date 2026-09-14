@@ -1,4 +1,4 @@
-End-to-End Serverless Financial Market Data ELT Pipeline
+📈 End-to-End Serverless Financial Market Data ELT Pipeline
 
 📌 Project Overview & Business Case
 Financial analysts require clean, reliable, historical market data to perform quantitative trading analysis. However, managing continuous server infrastructure to ingest and process daily API feeds introduces unnecessary overhead and costs.

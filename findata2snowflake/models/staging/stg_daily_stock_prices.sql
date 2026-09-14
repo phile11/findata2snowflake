@@ -1,5 +1,5 @@
 with stock_prices as (
-    select * from FINDATA_PROJECT.raw.DAILY_STOCK_PRICES
+    select * from {{ source('raw_data', 'daily_stock_prices') }}
 )
 select
     date,

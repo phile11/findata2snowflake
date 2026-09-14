@@ -15,6 +15,10 @@ wheels/
 venv/
 .ipynb_checkpoints
 data/*.parquet*.csv*.json
+target/
+dbt_packages/
+logs/
+dbt_modules/
 
 #IDE and OS
 .DS_Store

@@ -20,7 +20,7 @@ Serverless Data Lifecycle:
 3. Automated Snowpipe Loading: Snowflake's Snowpipe listens to the transformed data S3 bucket using an SQS notification queue, auto-ingesting new CSV files directly into the Snowflake RAW schema tables the second they land.
 4. Data Modeling & Analytics: dbt Core acts as the transformation engine within Snowflake, refining raw formats into modular staging layers before materializing a high-performance analytics star schema.
 
-![Architecture Diagram](/images/findata2snowflake_architecture.svg)
+<img src="./images/findata2snowflake_architecture.svg" alt="Architecture Diagram" width="100%" style="background-color: white; padding: 10px; border-radius: 5px;">
 
 
 📊 Dimensional Data Model (Star Schema)

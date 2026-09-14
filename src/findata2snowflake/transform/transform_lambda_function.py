@@ -1,3 +1,4 @@
+"""This code is for running as an AWS Lambda function"""
 import json
 from datetime import UTC, datetime
 from io import StringIO
@@ -37,6 +38,7 @@ def daily_stock_price(data):
 def lambda_handler(event, context):
     Bucket = "phile-findata1-raw-data"
     Key = "to_process/"
+    all_stock_data = []
 
     # List all files waiting to be processed
     response = s3.list_objects(Bucket=Bucket, Prefix=Key)
@@ -44,12 +46,13 @@ def lambda_handler(event, context):
 
     for file_key in stockprice_files:
     # Read raw JSON from S3
-    response = s3.get_object(Bucket=Bucket, Key=file_key)
-    content = response['Body'].read().decode('utf-8')
-    data = json.loads(content)
+        response = s3.get_object(Bucket=Bucket, Key=file_key)
+        content = response['Body'].read().decode('utf-8')
+        data = json.loads(content)
+        all_stock_data.extend(data)
 
     # Use Transform function
-    stockprice_list = daily_stock_price(data)
+    stockprice_list = daily_stock_price(all_stock_data)
 
     # Create DataFrames & dedup
     stockprice_df = pd.DataFrame(stockprice_list).drop_duplicates(subset=['date', 'symbol'])
@@ -68,6 +71,12 @@ def lambda_handler(event, context):
             Key=f"{name}/{name}_transformed_{timestamp}.csv",
             Body=buffer.getvalue()
         )
+    for file_key in stockprice_files:
+        # Move processed file to 'processed' folder
+        copy_source = {'Bucket': Bucket, 'Key': file_key}
+        s3.copy_object(Bucket=Bucket, Key=file_key.replace("to_process", "processed"), CopySource=copy_source)
+        s3.delete_object(Bucket=Bucket, Key=file_key)
+        
     return {
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')

@@ -2,4 +2,7 @@ packages:
   - name: dbt_date
     package: godatadriven/dbt_date
     version: 0.21.0
-sha1_hash: 6b4dd31edeb92edf102a508cf8d24f9e68b6f25b
+  - name: dbt_utils
+    package: dbt-labs/dbt_utils
+    version: 1.4.1
+sha1_hash: 813bb19523500545fb40b26a6fa4665ba3eb71fb

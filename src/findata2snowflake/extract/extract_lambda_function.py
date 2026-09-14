@@ -1,3 +1,4 @@
+"""This code is for running as an AWS Lambda function"""
 import json
 import os
 from datetime import UTC, datetime, timedelta
@@ -42,7 +43,7 @@ def lambda_handler(event, context):
     key_path = 'to_process/'
 
     stock_prices = extract_eod_stockprices(api_url, timeout)
-
+    #Create and load a JSON file into s3 raw storage bucket
     s3.put_object(
         Bucket=bucket,
         Key=key_path + filename,

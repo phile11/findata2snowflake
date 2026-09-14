@@ -1,0 +1,3 @@
+{
+    "dbt.dbtPythonPathOverride": "/Users/phile/Developer/experiment/findata2snowflake/.venv/bin/python3"
+}
